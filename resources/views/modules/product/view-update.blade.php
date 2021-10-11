@@ -77,7 +77,7 @@
                                 <button type="button" class="btn btn-secondary" onclick="window.location.href ='{{route('product.index')}}'">Go Back</button>
                             @else
                                 <button type="submit" class="btn btn-primary">Update</button>
-                                <button type="button" class="btn btn-secondary" onclick="window.location.href ='{{route('product.index')}}'">Cancel</button>
+                                <button type="button" class="btn btn-secondary" onclick="window.location.href ='{{route('product.index')}}'">Go Back</button>
                             @endif
                         </div>
                     </div>
