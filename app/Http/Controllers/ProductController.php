@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ProductMail;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
@@ -41,6 +43,8 @@ class ProductController extends Controller
 
 			$product = Product::firstOrCreate($dataReq->validated());
 
+
+			Mail::send(new ProductMail($product));
 
 			if($product->wasRecentlyCreated){
 				return redirect()->back()->with('toast_success', 'Product added successfully');
